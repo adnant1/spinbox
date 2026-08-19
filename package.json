@@ -1,0 +1,12 @@
+{
+  "name": "spinbox",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:frontend",
+    "build:frontend": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\build-frontend.ps1",
+    "dev:backend": "backend\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --app-dir backend",
+    "dev:frontend": "frontend\\node_modules\\.bin\\next.cmd dev frontend",
+    "test:backend": "cd backend && .\\.venv\\Scripts\\python.exe -m pytest tests -q",
+    "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\verify.ps1"
+  }
+}
